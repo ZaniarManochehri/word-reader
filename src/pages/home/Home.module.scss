@@ -1,0 +1,62 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  transition: all 0.3s ease-in-out;
+
+  .fileSelectorContainer {
+    margin: 24px 38px 0px;
+    border-radius: 6px;
+    border: 1px dashed #d9d9d9;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+
+    .desc {
+      direction: rtl;
+      font-size: 10px;
+      color: #8c8c8c;
+      text-align: center;
+    }
+  }
+
+  .wordTextContainer {
+    display: flex;
+    overflow: auto;
+    flex-direction: column;
+    gap: 8px;
+
+    .titleContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 38px;
+
+      .titleText {
+        font-size: 16px;
+        font-weight: bold;
+        color: #000000;
+      }
+
+      button {
+        direction: rtl;
+        background-color: #4caf50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 6px;
+      }
+    }
+  }
+}
