@@ -3,7 +3,9 @@ import mammoth from 'mammoth/mammoth.browser';
 import html2pdf from 'html2pdf.js';
 import styles from './Home.module.scss'
 
-const Home = () => {
+const Home = ({ params }) => {
+    console.log('params', params);
+    const { color, textAlign, paddingTop, paddingRight, paddingBottom, paddingLeft } = params
     const [wordContent, setWordContent] = useState('');
 
     const handleConvertToPDF = () => {
@@ -13,7 +15,7 @@ const Home = () => {
             filename: 'myfile.pdf',
             image: { type: 'jpeg', quality: 0.7 },
             html2canvas: { scale: 2 },
-            jsPDF: { compress: true, unit: 'in', format: 'a4', orientation: 'portrait' }
+            jsPDF: { compress: true, unit: 'in', format: 'a4', orientation: 'portrait' },
         };
 
         html2pdf().set(opt).from(element).save();
@@ -43,7 +45,10 @@ const Home = () => {
                     <button onClick={handleConvertToPDF}>تبدیل به pdf</button>
                     <span className={styles.titleText}>محتوای فایل ورد</span>
                 </div>
-                <pre id="content" style={{ whiteSpace: 'pre-wrap', color: 'red', fontSize: 14, padding: 16 }}>{wordContent}</pre>
+                <pre id="content" style={{
+                    whiteSpace: 'pre-wrap',
+                    color, paddingLeft: +paddingLeft, paddingRight: +paddingRight, paddingBottom: +paddingBottom, paddingTop: +paddingTop, textAlign
+                }}>{wordContent}</pre>
             </div>)}
         </div>
     );
