@@ -3,6 +3,8 @@ import React, { useState, cloneElement, isValidElement, Children } from 'react';
 import styles from './Layout.module.scss'
 
 const Layout = ({ children }) => {
+    const [openSidebar, setOpenSidebar] = useState(true);
+
     const [params, setParams] = useState({
         paddingTop: 8,
         paddingRight: 8,
@@ -10,6 +12,8 @@ const Layout = ({ children }) => {
         paddingLeft: 8,
         color: '#000000',
         textAlign: 'left',
+        quality: 0.7,
+        scale: 2,
     });
 
     const childrenWithProps = Children.map(children, child => {
@@ -20,10 +24,10 @@ const Layout = ({ children }) => {
     });
 
     return (
-        <div className={styles.layout}>
-            <div className={styles.content}>
+        <div className={`${styles.layout}`}>
+            <div className={`${styles.content} ${openSidebar && styles.openSidebar}`}>
+                <Sidebar open={openSidebar} onChange={(params) => setParams(params)} params={params} onChangeOpen={(open) => setOpenSidebar(open)} />
                 {childrenWithProps}
-                <Sidebar onChange={(params) => setParams(params)} params={params} />
             </div>
         </div>
     )

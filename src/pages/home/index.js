@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import mammoth from 'mammoth/mammoth.browser';
 import html2pdf from 'html2pdf.js';
 import styles from './Home.module.scss'
 
 const Home = ({ params }) => {
-    console.log('params', params);
-    const { color, textAlign, paddingTop, paddingRight, paddingBottom, paddingLeft } = params
+    const inputRef = useRef(null)
+    const { color, textAlign, paddingTop, paddingRight, paddingBottom, paddingLeft, quality, scale } = params
     const [wordContent, setWordContent] = useState('');
 
     const handleConvertToPDF = () => {
@@ -13,8 +13,8 @@ const Home = ({ params }) => {
         const opt = {
             margin: 0.5,
             filename: 'myfile.pdf',
-            image: { type: 'jpeg', quality: 0.7 },
-            html2canvas: { scale: 2 },
+            image: { type: 'jpeg', quality: +quality },
+            html2canvas: { scale },
             jsPDF: { compress: true, unit: 'in', format: 'a4', orientation: 'portrait' },
         };
 
@@ -36,9 +36,10 @@ const Home = ({ params }) => {
 
     return (
         <div className={styles.container}>
-            <div className={styles.fileSelectorContainer}>
+            <div className={styles.fileSelectorContainer} onClick={() => inputRef.current.click()}>
                 <span className={styles.desc}>فایل خود با پسوند .docx را وارد کنید</span>
-                <input type="file" onChange={handleFileUpload} accept='.docx' />
+                <input type="file" onChange={handleFileUpload} accept='.docx' ref={inputRef} hidden />
+                <i class="fa-duotone fa-cloud-arrow-up" style={{ fontSize: 32 }}></i>
             </div>
             {wordContent && (<div className={styles.wordTextContainer}>
                 <div className={styles.titleContainer}>

@@ -6,6 +6,8 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
+  overflow-y: auto;
+  overflow-x: hidden;
 
   .header {
     display: flex;
@@ -21,12 +23,10 @@
 
   &.open {
     width: 25%;
-    min-width: 25%;
   }
 
   &.close {
-    width: 2%;
-    min-width: 2%;
+    width: 28px;
   }
 
   .divider {
@@ -47,13 +47,25 @@
   }
 
   .item {
+    direction: ltr;
     display: flex;
     flex-direction: column;
     gap: 8px;
 
-    .label {
-      font-size: 14px;
-      font-weight: bold;
+    .itemTitleContainer {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      .itemDesc {
+        font-size: 10px;
+        font-weight: 400;
+        color: #464646;
+      }
     }
 
     .row {
@@ -62,8 +74,30 @@
       align-items: center;
       gap: 8px;
       input {
-        max-width: 45%;
+        width: 45%;
       }
     }
+
+    .qualityRow {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 8px;
+
+      .itemElementContainer {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        label {
+          font-size: 10px;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+
+  select {
+    height: 30px;
   }
 }

@@ -1,15 +1,15 @@
 .container {
   height: 100%;
-  width: 100%;
   display: flex;
+  flex: 1;
   flex-direction: column;
   gap: 24px;
   transition: all 0.3s ease-in-out;
 
   .fileSelectorContainer {
-    margin: 24px 38px 0px;
+    margin: 24px 16px 0px;
     border-radius: 6px;
-    border: 1px dashed #d9d9d9;
+    border: 1px dashed #221d1d;
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -26,11 +26,12 @@
 
   .wordTextContainer {
     display: flex;
-    overflow: auto;
+    overflow-y: auto;
     flex-direction: column;
     gap: 8px;
 
     .titleContainer {
+      direction: ltr;
       display: flex;
       flex-direction: row;
       align-items: center;

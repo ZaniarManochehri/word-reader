@@ -16,9 +16,10 @@ $iranSansBold: "IRANSansWeb(FaNum)_Bold";
 }
 
 body {
+  direction: rtl;
   margin: 0 auto;
-  height: 100vh;
   position: relative;
+  height: 100vh;
   overflow: hidden;
   font-family: $iranSans;
   -webkit-font-smoothing: antialiased;

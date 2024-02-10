@@ -14612,6 +14612,15 @@
   
   .fa-steam-symbol:before {
     content: "\f3f6"; }
+
+    .fad.fa-cloud-arrow-up::after, .fa-duotone.fa-cloud-arrow-up::after {
+      content: "\f0ee\f0ee"; }
+    
+    .fad.fa-cloud-upload::after, .fa-duotone.fa-cloud-upload::after {
+      content: "\f0ee\f0ee"; }
+    
+    .fad.fa-cloud-upload-alt::after, .fa-duotone.fa-cloud-upload-alt::after {
+      content: "\f0ee\f0ee"; }
   :root, :host {
     --fa-style-family-duotone: 'Font Awesome 6 Duotone';
     --fa-font-duotone: normal 900 1em/1 'Font Awesome 6 Duotone'; }
