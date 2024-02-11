@@ -15,7 +15,12 @@ const Home = ({ params }) => {
             filename: 'myfile.pdf',
             image: { type: 'jpeg', quality: +quality },
             html2canvas: { scale },
-            jsPDF: { compress: true, unit: 'in', format: 'a4', orientation: 'portrait' },
+            jsPDF: {
+                compress: true,
+                unit: 'in',
+                format: 'a4',
+                orientation: 'portrait',
+            },
         };
 
         html2pdf().set(opt).from(element).save();
@@ -46,10 +51,10 @@ const Home = ({ params }) => {
                     <button onClick={handleConvertToPDF}>تبدیل به pdf</button>
                     <span className={styles.titleText}>محتوای فایل ورد</span>
                 </div>
-                <pre id="content" style={{
+                <div id="content" style={{
                     whiteSpace: 'pre-wrap',
                     color, paddingLeft: +paddingLeft, paddingRight: +paddingRight, paddingBottom: +paddingBottom, paddingTop: +paddingTop, textAlign
-                }}>{wordContent}</pre>
+                }}>{wordContent}</div>
             </div>)}
         </div>
     );
