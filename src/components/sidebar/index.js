@@ -1,9 +1,9 @@
 import React, { Fragment, useEffect, useState } from 'react';
+
 import styles from './Sidebar.module.scss'
 
 const Sidebar = ({ open, params, onChange, onChangeOpen }) => {
 
-    console.log('yy', open);
     const [isOpen, setIsOpen] = useState(open);
     const [parameters, setParameters] = useState({});
 

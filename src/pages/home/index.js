@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import mammoth from 'mammoth/mammoth.browser';
 import html2pdf from 'html2pdf.js';
+
 import styles from './Home.module.scss'
 
 const Home = ({ params }) => {

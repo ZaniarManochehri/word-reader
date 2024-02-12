@@ -1,6 +1,7 @@
 import React from 'react';
+
+import Routers from 'Routes';
 import './App.scss';
-import Routers from './Routes';
 
 const App = () => <Routers />;
 

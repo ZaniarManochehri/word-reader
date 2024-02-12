@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import { Home } from './pages';
-import { Layout } from './components';
+import { Home } from 'pages';
+import { Layout } from 'components';
 
 export const routes = {
     ROOT: '/',

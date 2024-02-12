@@ -1,5 +1,6 @@
-import Sidebar from '../sidebar';
 import React, { useState, cloneElement, isValidElement, Children } from 'react';
+
+import Sidebar from 'components/sidebar';
 import styles from './Layout.module.scss'
 
 const Layout = ({ children }) => {
@@ -11,9 +12,9 @@ const Layout = ({ children }) => {
         paddingBottom: 8,
         paddingLeft: 8,
         color: '#000000',
-        textAlign: 'left',
-        quality: 0.7,
-        scale: 2,
+        textAlign: 'right',
+        quality: 0.8,
+        scale: 3,
     });
 
     const childrenWithProps = Children.map(children, child => {
